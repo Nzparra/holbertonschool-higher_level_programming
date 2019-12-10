@@ -7,5 +7,5 @@ def uppercase(str):
         if i >= 97 and i <= 123:
             i -= 32
             c += 1
-        print("{}".format(chr(i)), end = '')
-    print("\n",end = '')
+        print("{}".format(chr(i)), end='')
+    print("\n", end='')
