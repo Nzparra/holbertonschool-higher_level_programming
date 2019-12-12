@@ -13,11 +13,11 @@ if __name__ == "__main__":
         else:
             a = int(argv[1])
             b = int(argv[3])
-            if op in "+":
+            if op == "+":
                 print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
-            if op in "-":
+            if op == "-":
                 print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
-            if op in "*":
+            if op == "*":
                 print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-            if op in "-":
+            if op == "-":
                 print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
