@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
-    from sys import argv, exit
+    from sys import argv
     if len(argv) != 4:
         print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
@@ -19,5 +19,5 @@ if __name__ == "__main__":
                 print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
             if op == "*":
                 print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-            if op == "-":
+            if op == "/":
                 print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
