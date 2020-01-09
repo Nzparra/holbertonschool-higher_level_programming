@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class Square:
     def __init__(self, size=0):
-        self.size = size
+        self.__size = size
 
     def area(self):
         return(self.__size * self.__size)
@@ -19,7 +19,7 @@ class Square:
         else:
             self.__size = value
 
-    def __et__(self, other):
+    def __eq__(self, other):
         return (self.area() == other.area())
 
     def __ne__(self, other):
