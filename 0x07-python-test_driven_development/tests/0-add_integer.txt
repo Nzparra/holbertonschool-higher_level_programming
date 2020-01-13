@@ -1,0 +1,37 @@
+The Add_Integer Module:
+=======================
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Now proper functioning:
+
+    >>> add_integer(6, 5)
+    11
+
+    >>> add_integer(3**2, -5)
+    4
+
+    >>> add_integer(-100.3, 2)
+    -98
+
+Now Errors:
+
+    >>> add_integer(5, "School")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer("a", "b")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(None, 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer([1, 9 , 8], 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(6, {2, 9}) 
+    Traceback (most recent call last):
+    TypeError: b must be an integer
