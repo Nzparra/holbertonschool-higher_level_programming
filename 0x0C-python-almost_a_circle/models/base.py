@@ -82,15 +82,18 @@ class Base:
         """Deserializes"""
         filename = cls.__name__ + ".csv"
         loads = []
-        with open(filename, 'r') as csv_f:
-            read = csv.reader(csv_f)
-            for i in read:
-                if cls.__name__ is "Square":
-                    load = {"id": int(i[0]), "size": int(i[1]),
-                            "x": int(i[2]), "y": int(i[3])}
-                elif cls.__name__ is "Rectangle":
-                    load = {"id": int(i[0]), "width": int(i[1]),
-                            "height": int(i[2]), "x": int(i[3]),
-                            "y": int(i[4])}
-                loads.append(cls.create(**load))
-        return loads
+        try:
+            with open(filename, 'r') as csv_f:
+                read = csv.reader(csv_f)
+                for i in read:
+                    if cls.__name__ is "Square":
+                        load = {"id": int(i[0]), "size": int(i[1]),
+                                "x": int(i[2]), "y": int(i[3])}
+                    elif cls.__name__ is "Rectangle":
+                        load = {"id": int(i[0]), "width": int(i[1]),
+                                "height": int(i[2]), "x": int(i[3]),
+                                "y": int(i[4])}
+                    loads.append(cls.create(**load))
+            return loads
+        except IOError:
+            return loads
