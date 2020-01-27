@@ -20,8 +20,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return JSON string in dictionaries"""
-        if list_dictionaries is None:
-            list_dictionaries = []
+        if not list_dictionaries:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
