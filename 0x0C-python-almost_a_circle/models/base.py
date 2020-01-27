@@ -27,8 +27,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Return list of JSON"""
-        if len(json_string) == 0 or json_string is None:
-            return ([])
+        if json_string is None:
+            b = []
+            return b
         return json.loads(json_string)
 
     @classmethod
