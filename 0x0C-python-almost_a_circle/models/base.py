@@ -95,5 +95,6 @@ class Base:
                                 "y": int(i[4])}
                     loads.append(cls.create(**load))
             return loads
-        except IOError:
-            return loads
+        except:
+            b = []
+            return b
