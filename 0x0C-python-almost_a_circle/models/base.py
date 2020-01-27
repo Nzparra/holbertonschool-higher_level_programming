@@ -3,6 +3,7 @@
 
 import json
 import csv
+import os
 
 
 class Base:
@@ -58,11 +59,14 @@ class Base:
         """Loads a instance"""
         filename = cls.__name__ + ".json"
         new_list = []
-        with open(filename, 'r') as f:
-            new_list = cls.from_json_string(f.read())
-        for i, j in enumerate(new_list):
-            new_list[i] = cls.create(**new_list[i])
-        return new_list
+        if os.path.isfile(filename):
+            with open(filename, 'r') as f:
+                new_list = cls.from_json_string(f.read())
+            for i, j in enumerate(new_list):
+                new_list[i] = cls.create(**new_list[i])
+            return new_list
+        else:
+            return new_list
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
