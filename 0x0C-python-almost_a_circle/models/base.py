@@ -4,6 +4,8 @@
 import json
 import csv
 import os
+import turtle as tt
+import random
 
 
 class Base:
@@ -102,3 +104,56 @@ class Base:
         except:
             b = []
             return b
+
+    def draw(list_rectangles, list_squares):
+        """Draw rectangles and squares"""
+        colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"]
+        window = tt.Screen()
+        window.screensize()
+        window.setup(width=1.0, height=1.0)
+        tt.speed(2)
+        tt.pensize(4)
+        tt.penup()
+        initx = -500
+        inity = 200
+        for r in list_rectangles:
+            initx += r.x
+            inity += r.y
+            tt.goto(initx, inity)
+            tt.pendown()
+            tt.begin_fill()
+            color = random.choice(colors)
+            tt.color(color)
+            tt.forward(r.width)
+            tt.left(90)
+            tt.forward(r.height)
+            tt.left(90)
+            tt.forward(r.width)
+            tt.left(90)
+            tt.forward(r.height)
+            tt.end_fill()
+            tt.penup()
+            initx += r.width + 25
+            inity += r.y
+        initx = 0
+        inity = -200
+        for s in list_squares:
+            initx += s.x
+            inity += s.y
+            tt.goto(initx, inity)
+            tt.pendown()
+            tt.begin_fill()
+            color = random.choice(colors)
+            tt.color(color)
+            tt.forward(s.size)
+            tt.left(90)
+            tt.forward(s.size)
+            tt.left(90)
+            tt.forward(s.size)
+            tt.left(90)
+            tt.forward(s.size)
+            tt.end_fill()
+            tt.penup()
+            initx += s.size + 25
+            inity += s.y
+        """tt.getscreen()._root.mainloop()"""
