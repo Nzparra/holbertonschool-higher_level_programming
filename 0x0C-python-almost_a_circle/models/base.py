@@ -105,6 +105,7 @@ class Base:
             b = []
             return b
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw rectangles and squares"""
         colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"]
