@@ -1,7 +1,7 @@
--- that lists all shows contained in hbtn_0d_tvshows
-SELECT shows.title, genre.genre_id
-FROM tv_shows as shows
-LEFT JOIN tv_show_genres as genre
-ON shows.id = genre.show_id
-WHERE genre.genre_id IS NULL
+-- that lists all tv_shows.contained in hbtn_0d_tvshows
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows
+LEFT JOIN tv_show_genres
+ON tv_shows.id = tv_show_genres.show_id
+WHERE tv_show_genres.genre_id IS NULL
 ORDER BY 1, 2;
