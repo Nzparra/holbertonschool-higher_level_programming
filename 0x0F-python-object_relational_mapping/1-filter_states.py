@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" States"""
+
 import sys
 import MySQLdb as sql
 
