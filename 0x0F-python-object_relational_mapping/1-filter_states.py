@@ -7,7 +7,8 @@ if __name__ == "__main__":
                      passwd=sys.argv[2], db=sys.argv[3])
     sq = db.cursor()
     sq.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    for row in sq:
+    sqq = sq.fetchall()
+    for row in sqq:
         print("{}".format(row))
     sq.close()
     db.close()
